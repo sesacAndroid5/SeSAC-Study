@@ -30,8 +30,10 @@ JUnit 기반으로 작성합니다.
 <br><br>
 **< 테스트 코드 파일 생성 방법 >**
 클래스명에서 option + enter (window : alt + enter)
+
 <img width="415" height="300" alt="스크린샷 2025-07-22 오후 7 56 39" src="https://github.com/user-attachments/assets/0372efed-23d3-4f3b-be0f-7aba3117c433" />
 <img width="470" height="451" alt="스크린샷 2025-07-22 오후 8 00 06" src="https://github.com/user-attachments/assets/e3f65eec-dd7d-4847-8be8-155597550ba2" />
+
 - 테스트 코드 파일 생성
 <img width="690" height="296" alt="스크린샷 2025-07-22 오후 8 00 38" src="https://github.com/user-attachments/assets/5264c8c2-9d0a-4b77-8c5c-8cc9f6467440" />
 <br><br>
