@@ -166,27 +166,6 @@ class SyncUserDataUseCase(
 ```
 이유: '사용자 데이터 동기화'라는 단일 책임을 위해 여러 데이터 소스를 조합하는 것은 자연스러운 비즈니스 로칙입니다.
 
-## ✅ 다른 UseCase를 조합해서 사용
-더 큰 비즈니스 플로우를 위해, 하나의 상위 유스케이스가 여러 하위 유스케이스를 오케스트레이션(orchestration)할 수 있습니다.
-> 오케스트레이션(orchestration) : 여러 개별 작업(또는 컴포넌트)을 순서와 조건에 맞게 조율해서 하나의 큰 흐름을 완성하는 것
-
-```Kotlin
-
-// 예시: '구매 완료'라는 큰 흐름을 위해 여러 단계를 조합
-class CompletePurchaseUseCase(
-    private val validateStockUseCase: ValidateStockUseCase,
-    private val processPaymentUseCase: ProcessPaymentUseCase,
-    private val saveOrderUseCase: SaveOrderUseCase
-) {
-    suspend operator fun invoke(order: Order): Boolean {
-        if (!validateStockUseCase(order)) return false
-        if (!processPaymentUseCase(order)) return false
-        saveOrderUseCase(order)
-        return true
-    }
-}
-```
-이유: 상위 유스케이스가 여러 하위 유스케이스를 조율하여 전체 비즈니스 플로우를 담당합니다. 이를 통해 각 단계의 로직을 재사용하고 테스트하기 용이해집니다.
 
 ## 📌 출처
 - ✅ [안드로이드 디벨로퍼 도메인 레이어](https://developer.android.com/topic/architecture/domain-layer?hl=ko&_gl=1*1ahkdal*_up*MQ..*_ga*MTUxMzgzMzM4NC4xNzUzOTY4MjQx*_ga_6HH9YJMN9M*czE3NTM5NjgyNDAkbzEkZzAkdDE3NTM5NjgyNDAkajYwJGwwJGg0NDAwNTA1NTA.)
