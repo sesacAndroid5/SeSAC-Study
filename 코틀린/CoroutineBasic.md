@@ -162,8 +162,9 @@ scope.launch(handler) {
 ```
 
 > Structured Concurrency 원칙에 따라  
-> **자식 Coroutine 예외 발생 시 부모도 모두 취소됨**
-
+> 일반 Job/coroutineScope에서는 자식 코루틴에서 CancellationException을 제외한 예외가 처리되지 않으면 부모가 취소되고 형제도 함께 취소된다.
+> **SupervisorJob/supervisorScope**를 사용하면 자식 실패가 부모/형제에게 전파되지 않는다.
+> CoroutineExceptionHandler는 전파를 막지 못하며, 루트 코루틴의 로깅/관찰용이다.
 ---
 
 ## 10. ✅ 요약
