@@ -230,3 +230,7 @@ Kotlin도 최종적으로는 JVM 바이트코드 → DEX → ART 실행이므로
 ---
 
 
+## 참고 링크 및 이미지 출처
+[https://developer.android.com/guide/platform?hl=ko]
+
+[https://www.youtube.com/watch?v=3mZukSTEE7A&ab_channel=SpringDrop]
