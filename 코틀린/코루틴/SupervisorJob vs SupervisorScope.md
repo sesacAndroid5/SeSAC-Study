@@ -34,7 +34,7 @@ scope.cancel()
 - 내부적으로 SupervisorJob을 포함한다.
 - 부모와 자동으로 연결되므로 parent를 수동으로 지정할 필요가 없다.
 - 자식 코루틴이 모두 완료되면 해당 스코프도 자동으로 완료 상태가 된다.
-- 사용 위치: suspend 함수 내부나 이미 존재하는 코루틴 안에서 일시적으로 독립적인 자식 코루틴 그룹을 묶고 싶을 때
+- **사용 위치**: suspend 함수 내부나 이미 존재하는 코루틴 안에서 일시적으로 독립적인 자식 코루틴 그룹을 묶고 싶을 때
 
 ```kotlin
 suspend fun fetchData() = supervisorScope {
